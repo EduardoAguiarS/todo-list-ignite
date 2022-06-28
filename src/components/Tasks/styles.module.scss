@@ -13,7 +13,23 @@
 .tasks__list {
   margin-top: 2rem;
 
-  border-radius: 8px 8px 0 0;
+  color: $gray-300;
 
-  border-top: 1px solid $gray-400;
+  .no__tasks {
+    border-radius: 8px 8px 0 0;
+    border-top: 1px solid $gray-400;
+
+    padding-top: 4rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    line-height: 1.4rem;
+
+    strong {
+      margin-top: 1rem;
+    }
+  }
 }
