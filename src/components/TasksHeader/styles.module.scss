@@ -1,0 +1,31 @@
+@import "src/styles/variables.scss";
+
+.tasks__header {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 0.875rem;
+  line-height: 0;
+
+  .created__tasks {
+    color: $blue;
+  }
+
+  .completed {
+    color: $purple;
+  }
+
+  .created__tasks,
+  .completed {
+    span {
+      margin-left: 0.5rem;
+
+      color: $gray-200;
+      background: $gray-400;
+
+      padding: 2px 8px;
+
+      border-radius: 999px;
+    }
+  }
+}
