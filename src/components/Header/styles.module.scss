@@ -1,0 +1,32 @@
+@import "src/styles/variables.scss";
+
+.header {
+  width: 100%;
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $gray-700;
+
+  padding: 0 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  h1 span {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3rem;
+
+    color: $purple;
+  }
+
+  h1 span:first-child {
+    color: $blue;
+  }
+}
