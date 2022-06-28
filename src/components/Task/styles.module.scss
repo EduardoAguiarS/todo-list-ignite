@@ -1,0 +1,95 @@
+@import "src/styles/variables.scss";
+
+.task__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 1rem;
+
+  background: $gray-500;
+
+  border-radius: 8px;
+  border: 1px solid $gray-400;
+
+  button {
+    color: $gray-300;
+    background: none;
+
+    min-width: 1.2rem;
+
+    line-height: 0;
+
+    transition: color 0.2s;
+
+    &:hover {
+      color: $danger;
+    }
+  }
+}
+
+.task__content {
+  .hidden__box {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    appearance: none;
+    opacity: 0;
+  }
+
+  .check__label {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.225rem;
+  }
+
+  .check__label__box {
+    margin-top: 0.1rem;
+
+    min-width: 20px;
+    min-height: 20px;
+
+    border: 2px solid $blue;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition: all 0.1s ease;
+  }
+
+  .hidden__box:checked + .check__label {
+    .check__label__box {
+      border: 2px solid $purple;
+      background: $purple;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 6px;
+        width: 4px;
+        height: 8px;
+        border: solid $gray-100;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    .check__label__text {
+      color: $gray-300;
+      text-decoration: line-through;
+    }
+  }
+
+  .check__label__text {
+    color: $gray-100;
+    cursor: pointer;
+  }
+}
