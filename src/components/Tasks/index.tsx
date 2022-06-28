@@ -4,8 +4,9 @@ import styles from "./styles.module.scss";
 
 export function Tasks() {
   return (
-    <main className={styles.tasks__container}>
+    <div className={styles.tasks__container}>
       <TasksHeader />
-    </main>
+      <main className={styles.tasks__list}>tasks</main>
+    </div>
   );
 }
