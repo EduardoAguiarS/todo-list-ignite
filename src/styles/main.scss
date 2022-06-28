@@ -1,0 +1,71 @@
+//CSS Variables
+@import "./variables.scss";
+
+// CSS Reset
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: $gray-600;
+  color: $gray-100;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+textarea,
+button,
+select {
+  font-family: $font-family;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+button {
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
+
+  cursor: text;
+}
+
+ul,
+ol {
+  list-style: none;
+}
