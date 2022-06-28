@@ -17,3 +17,11 @@ $blue: #4ea8de;
 $blue-dark: #1e6f9f;
 
 $danger: #e25858;
+
+// Container
+@mixin container {
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  max-width: 46rem;
+}
