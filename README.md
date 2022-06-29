@@ -10,7 +10,8 @@
 #### Projeto em desenvolvimento:
 
 - [x] Componentes e Estilo
-- [ ] Lógica para o funcionamento do projeto
+- [x] Lógica para o funcionamento do projeto
+- [ ] Salvar o estado das tarefas no localStorage
 - [ ] Deploy do projeto
 - [ ] Aplicação do projeto
 
