@@ -1,12 +1,16 @@
 //CSS Import
 import styles from "./styles.module.scss";
 
-export function TasksHeader() {
+interface TasksHeaderProps {
+  tasksLength: number;
+}
+
+export function TasksHeader({ tasksLength }: TasksHeaderProps) {
   return (
     <header className={styles.tasks__header}>
       <div className={styles.created__tasks}>
         <strong>
-          Tarefas criadas <span>0</span>
+          Tarefas criadas <span>{tasksLength}</span>
         </strong>
       </div>
       <div className={styles.completed}>

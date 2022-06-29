@@ -21,7 +21,10 @@ export function Tasks() {
   const [tasks, setTasks] = useState<TaskProps[]>([]);
 
   function addNewTask(task: string) {
-    setTasks([...tasks, { id: Date.now().toString(), task: task }]);
+    setTasks([
+      ...tasks,
+      { id: (Date.now() + tasks.length).toString(), task: task }
+    ]);
   }
 
   function removeTask(id: string) {
@@ -32,7 +35,7 @@ export function Tasks() {
     <>
       <TaskForm addTask={addNewTask} />
       <div className={styles.tasks__container}>
-        <TasksHeader />
+        <TasksHeader tasksLength={tasks.length} />
         <main className={styles.tasks__list}>
           {tasks.length === 0 && (
             <div className={styles.no__tasks}>
