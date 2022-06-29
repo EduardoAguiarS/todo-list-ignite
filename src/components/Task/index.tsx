@@ -7,9 +7,14 @@ import { Trash } from "phosphor-react";
 interface TaskProps {
   taskID: string;
   text: string;
+  removeTask: (id: string) => void;
 }
 
-export function Task({ taskID, text }: TaskProps) {
+export function Task({ taskID, text, removeTask }: TaskProps) {
+  function handleDeleteTask() {
+    removeTask(taskID);
+  }
+
   return (
     <div className={styles.task__container}>
       <div className={styles.task__content}>
@@ -19,7 +24,7 @@ export function Task({ taskID, text }: TaskProps) {
           <span className={styles.check__label__text}>{text}</span>
         </label>
       </div>
-      <button title="Delete Button">
+      <button title="Delete Button" onClick={handleDeleteTask}>
         <Trash size={20} />
       </button>
     </div>

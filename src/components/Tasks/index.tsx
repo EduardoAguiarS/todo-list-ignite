@@ -24,6 +24,10 @@ export function Tasks() {
     setTasks([...tasks, { id: Date.now().toString(), task: task }]);
   }
 
+  function removeTask(id: string) {
+    setTasks(tasks.filter(task => task.id !== id));
+  }
+
   return (
     <>
       <TaskForm addTask={addNewTask} />
@@ -38,7 +42,14 @@ export function Tasks() {
             </div>
           )}
           {tasks.map(task => {
-            return <Task key={task.id} taskID={task.id} text={task.task} />;
+            return (
+              <Task
+                key={task.id}
+                taskID={task.id}
+                text={task.task}
+                removeTask={removeTask}
+              />
+            );
           })}
         </main>
       </div>
