@@ -92,6 +92,9 @@
 
   .check__label__text {
     color: $gray-100;
+
+    cursor: pointer;
+
     word-wrap: break-word;
     display: inline-block;
   }
