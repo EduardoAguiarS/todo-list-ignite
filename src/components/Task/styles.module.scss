@@ -35,9 +35,8 @@
 
 .task__content {
   .hidden__box {
+    width: 0;
     position: absolute;
-    top: -9999px;
-    left: -9999px;
     appearance: none;
     opacity: 0;
   }
