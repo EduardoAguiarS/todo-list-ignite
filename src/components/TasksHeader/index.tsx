@@ -3,9 +3,10 @@ import styles from "./styles.module.scss";
 
 interface TasksHeaderProps {
   tasksLength: number;
+  completedTask: number;
 }
 
-export function TasksHeader({ tasksLength }: TasksHeaderProps) {
+export function TasksHeader({ tasksLength, completedTask }: TasksHeaderProps) {
   return (
     <header className={styles.tasks__header}>
       <div className={styles.created__tasks}>
@@ -15,7 +16,10 @@ export function TasksHeader({ tasksLength }: TasksHeaderProps) {
       </div>
       <div className={styles.completed}>
         <strong>
-          Concluídas <span>0</span>
+          Concluídas{" "}
+          <span>
+            {completedTask > 0 ? `${completedTask} de ${tasksLength} ` : 0}
+          </span>
         </strong>
       </div>
     </header>

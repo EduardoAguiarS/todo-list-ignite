@@ -15,27 +15,51 @@ import { useState } from "react";
 interface TaskProps {
   id: string;
   task: string;
+  completed: boolean;
 }
 
 export function Tasks() {
   const [tasks, setTasks] = useState<TaskProps[]>([]);
+  const [completedTasks, setCompletedTasks] = useState<TaskProps[]>([]);
 
   function addNewTask(task: string) {
     setTasks([
       ...tasks,
-      { id: (Date.now() + tasks.length).toString(), task: task }
+      {
+        id: (Date.now() + tasks.length).toString(),
+        task: task,
+        completed: false
+      }
     ]);
+  }
+
+  function setCompletedTask(id: string) {
+    tasks.map(task => {
+      if (task.id === id) {
+        task.completed = !task.completed;
+
+        if (task.completed) {
+          setCompletedTasks([...completedTasks, task]);
+        } else {
+          setCompletedTasks(completedTasks.filter(task => task.id !== id));
+        }
+      }
+    });
   }
 
   function removeTask(id: string) {
     setTasks(tasks.filter(task => task.id !== id));
+    setCompletedTasks(tasks.filter(task => task.id !== id));
   }
 
   return (
     <>
       <TaskForm addTask={addNewTask} />
       <div className={styles.tasks__container}>
-        <TasksHeader tasksLength={tasks.length} />
+        <TasksHeader
+          tasksLength={tasks.length}
+          completedTask={completedTasks.length}
+        />
         <main className={styles.tasks__list}>
           {tasks.length === 0 && (
             <div className={styles.no__tasks}>
@@ -51,6 +75,7 @@ export function Tasks() {
                 taskID={task.id}
                 text={task.task}
                 removeTask={removeTask}
+                setCompletedTask={setCompletedTask}
               />
             );
           })}
