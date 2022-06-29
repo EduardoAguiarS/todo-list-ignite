@@ -21,6 +21,7 @@ export function TaskForm({ addTask }: TaskFormProps) {
   // Add Task
   function handleFormSubmit(event: FormEvent) {
     event.preventDefault();
+    if (inputValue.trim() === "") return;
     addTask(inputValue);
     setInputValue("");
   }
