@@ -4,12 +4,37 @@ import styles from "./styles.module.scss";
 // Phosphor Icons
 import { PlusCircle } from "phosphor-react";
 
-export function TaskForm() {
+// React
+import { ChangeEvent, FormEvent, useState } from "react";
+
+interface TaskFormProps {
+  addTask: (task: string) => void;
+}
+
+export function TaskForm({ addTask }: TaskFormProps) {
+  // Get Input Value
+  const [inputValue, setInputValue] = useState<string>("");
+  function handleFormTextChange(event: ChangeEvent<HTMLInputElement>) {
+    setInputValue(event.target.value);
+  }
+
+  // Add Task
+  function handleFormSubmit(event: FormEvent) {
+    event.preventDefault();
+    addTask(inputValue);
+    setInputValue("");
+  }
+
   return (
     <div className={styles.form__container}>
       <form className={styles.form__content}>
-        <input type="text" placeholder="Adicione uma nova tarefa" />
-        <button type="submit">
+        <input
+          value={inputValue}
+          type="text"
+          placeholder="Adicione uma nova tarefa"
+          onChange={handleFormTextChange}
+        />
+        <button type="submit" onClick={handleFormSubmit}>
           Criar
           <PlusCircle size={18} />
         </button>
