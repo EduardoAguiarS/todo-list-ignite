@@ -18,7 +18,7 @@ export function TasksHeader({ tasksLength, completedTask }: TasksHeaderProps) {
         <strong>
           Concluídas{" "}
           <span>
-            {completedTask > 0 ? `${completedTask} de ${tasksLength} ` : 0}
+            {tasksLength > 0 ? `${completedTask} de ${tasksLength} ` : 0}
           </span>
         </strong>
       </div>

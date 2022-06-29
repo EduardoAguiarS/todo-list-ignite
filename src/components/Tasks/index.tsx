@@ -49,7 +49,7 @@ export function Tasks() {
 
   function removeTask(id: string) {
     setTasks(tasks.filter(task => task.id !== id));
-    setCompletedTasks(tasks.filter(task => task.id !== id));
+    setCompletedTasks(completedTasks.filter(task => task.id !== id));
   }
 
   return (
