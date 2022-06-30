@@ -15,6 +15,8 @@
 - [x] Deploy do projeto
 - [ ] Aplicação do projeto
 
+[`Acesse o deploy do projeto aqui!`](https://todo-list-ignite-eight.vercel.app/)
+
 #### Como usar este projeto:
 
 ```bash
