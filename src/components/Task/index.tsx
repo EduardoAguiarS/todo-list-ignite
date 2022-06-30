@@ -9,13 +9,15 @@ interface TaskProps {
   text: string;
   removeTask: (id: string) => void;
   setCompletedTask: (id: string) => void;
+  completed: boolean;
 }
 
 export function Task({
   taskID,
   text,
   removeTask,
-  setCompletedTask
+  setCompletedTask,
+  completed
 }: TaskProps) {
   function handleDeleteTask() {
     removeTask(taskID);
@@ -25,13 +27,15 @@ export function Task({
     setCompletedTask(taskID);
   }
 
+  console.log(completed);
+
   return (
     <div className={styles.task__container}>
       <div className={styles.task__content}>
         <input
           type="checkbox"
           id={taskID}
-          className={styles.hidden__box}
+          className={`${styles.hidden__box} ${completed ? styles.active : ""}`}
           onClick={handleSetCompletedTask}
         />
         <label htmlFor={taskID} className={styles.check__label}>

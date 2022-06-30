@@ -10,7 +10,7 @@ import { Task } from "../Task";
 import { ClipboardText } from "phosphor-react";
 
 // React
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface TaskProps {
   id: string;
@@ -18,10 +18,21 @@ interface TaskProps {
   completed: boolean;
 }
 
-export function Tasks() {
-  const [tasks, setTasks] = useState<TaskProps[]>([]);
-  const [completedTasks, setCompletedTasks] = useState<TaskProps[]>([]);
+const getLocalTasks = () => {
+  return JSON.parse(localStorage.getItem("tasks") || "[]");
+};
 
+const getLocalCompletedTasks = () => {
+  return JSON.parse(localStorage.getItem("completedTasks") || "[]");
+};
+
+export function Tasks() {
+  const [tasks, setTasks] = useState<TaskProps[]>(getLocalTasks());
+  const [completedTasks, setCompletedTasks] = useState<TaskProps[]>(
+    getLocalCompletedTasks()
+  );
+
+  // Add a new task
   function addNewTask(task: string) {
     setTasks([
       ...tasks,
@@ -33,6 +44,7 @@ export function Tasks() {
     ]);
   }
 
+  // Set Completed Task
   function setCompletedTask(id: string) {
     tasks.map(task => {
       if (task.id === id) {
@@ -47,10 +59,21 @@ export function Tasks() {
     });
   }
 
+  // Remove Tasks
   function removeTask(id: string) {
     setTasks(tasks.filter(task => task.id !== id));
     setCompletedTasks(completedTasks.filter(task => task.id !== id));
   }
+
+  // Add Tasks to Local Storage
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks, completedTasks]);
+
+  // Add Completed Tasks to Local Storage
+  useEffect(() => {
+    localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+  }, [completedTasks, tasks]);
 
   return (
     <>
@@ -76,6 +99,7 @@ export function Tasks() {
                 text={task.task}
                 removeTask={removeTask}
                 setCompletedTask={setCompletedTask}
+                completed={task.completed}
               />
             );
           })}

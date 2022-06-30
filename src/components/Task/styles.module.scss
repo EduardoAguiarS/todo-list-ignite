@@ -65,7 +65,7 @@
     transition: all 0.1s ease;
   }
 
-  .hidden__box:checked + .check__label {
+  .hidden__box.active + .check__label {
     .check__label__box {
       border: 2px solid $purple;
       background: $purple;

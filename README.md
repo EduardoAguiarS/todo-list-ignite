@@ -11,7 +11,7 @@
 
 - [x] Componentes e Estilo
 - [x] Lógica para o funcionamento do projeto
-- [ ] Salvar o estado das tarefas no localStorage
+- [x] Salvar o estado das tarefas no localStorage
 - [ ] Deploy do projeto
 - [ ] Aplicação do projeto
 
