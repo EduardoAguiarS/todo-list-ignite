@@ -28,12 +28,20 @@
       font-weight: 400;
 
       border: 1px solid $gray-700;
+
+      @media screen and (max-width: 320px) {
+        width: 120px;
+
+        &::placeholder {
+          font-size: 0.8rem;
+        }
+      }
     }
 
     button {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.3rem;
 
       background: $blue-dark;
       color: $gray-100;
