@@ -37,7 +37,7 @@ export function TaskForm({ addTask }: TaskFormProps) {
         />
         <button type="submit" onClick={handleFormSubmit}>
           Criar
-          <PlusCircle size={18} />
+          <PlusCircle className={styles.icon} />
         </button>
       </form>
     </div>
