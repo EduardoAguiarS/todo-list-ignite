@@ -13,7 +13,7 @@
 - [x] Lógica para o funcionamento do projeto
 - [x] Salvar o estado das tarefas no localStorage
 - [x] Deploy do projeto
-- [ ] Aplicação do projeto
+- [x] Aplicação do projeto
 
 [`Acesse o deploy do projeto aqui!`](https://todo-list-ignite-eight.vercel.app/)
 
