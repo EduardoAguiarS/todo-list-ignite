@@ -40,7 +40,9 @@ export function Task({
         />
         <label htmlFor={taskID} className={styles.check__label}>
           <span className={styles.check__label__box}></span>
-          <span className={styles.check__label__text}>{text}</span>
+          <span className={styles.check__label__text} id={`task-${text}`}>
+            {text}
+          </span>
         </label>
       </div>
       <button title="Delete Button" onClick={handleDeleteTask}>

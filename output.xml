@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220711 15:19:57.762" rpa="false" schemaversion="3">
+<suite id="s1" name="Todo-List" source="/Users/eduardo/dev/rocketseat/ignite/01-REACTJS_FUNDAMENTALS/todo-list">
+<suite id="s1-s1" name="Tests" source="/Users/eduardo/dev/rocketseat/ignite/01-REACTJS_FUNDAMENTALS/todo-list/tests">
+<suite id="s1-s1-s1" name="Chrome" source="/Users/eduardo/dev/rocketseat/ignite/01-REACTJS_FUNDAMENTALS/todo-list/tests/Chrome">
+<suite id="s1-s1-s1-s1" name="Adding Task" source="/Users/eduardo/dev/rocketseat/ignite/01-REACTJS_FUNDAMENTALS/todo-list/tests/Chrome/adding_task.robot">
+<test id="s1-s1-s1-s1-t1" name="Adding Task" line="12">
+<kw name="Open Browser To Todo List Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220711 15:19:57.912" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<msg timestamp="20220711 15:19:59.515" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220711 15:19:59.516" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+0   chromedriver                        0x000000010eeb9079 chromedriver + 4444281
+1   chromedriver                        0x000000010ee45403 chromedriver + 3970051
+2   chromedriver                        0x000000010eae0038 chromedriver + 409656
+3   chromedriver                        0x000000010ead9cc5 chromedriver + 384197
+4   chromedriver                        0x000000010eacc85d chromedriver + 329821
+5   chromedriver                        0x000000010eacd60d chromedriver + 333325
+6   chromedriver                        0x000000010eaccac7 chromedriver + 330439
+7   chromedriver                        0x000000010eacc047 chromedriver + 327751
+8   chromedriver                        0x000000010eacaf16 chromedriver + 323350
+9   chromedriver                        0x000000010eacb2f2 chromedriver + 324338
+10  chromedriver                        0x000000010eae1ac2 chromedriver + 416450
+11  chromedriver                        0x000000010eb469bf chromedriver + 829887
+12  chromedriver                        0x000000010eb33792 chromedriver + 751506
+13  chromedriver                        0x000000010eb46221 chromedriver + 827937
+14  chromedriver                        0x000000010eb33683 chromedriver + 751235
+15  chromedriver                        0x000000010eb09a45 chromedriver + 580165
+16  chromedriver                        0x000000010eb0aa95 chromedriver + 584341
+17  chromedriver                        0x000000010ee8a55d chromedriver + 4253021
+18  chromedriver                        0x000000010ee8f3a1 chromedriver + 4273057
+19  chromedriver                        0x000000010ee9416f chromedriver + 4292975
+20  chromedriver                        0x000000010ee8fdea chromedriver + 4275690
+21  chromedriver                        0x000000010ee6954f chromedriver + 4117839
+22  chromedriver                        0x000000010eea9ed8 chromedriver + 4382424
+23  chromedriver                        0x000000010eeaa05f chromedriver + 4382815
+24  chromedriver                        0x000000010eec08d5 chromedriver + 4475093
+25  libsystem_pthread.dylib             0x00007ff80d8654e1 _pthread_start + 125
+26  libsystem_pthread.dylib             0x00007ff80d860f6b thread_start + 15
+</msg>
+<status status="FAIL" starttime="20220711 15:19:57.911" endtime="20220711 15:19:59.517"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220711 15:19:59.517" endtime="20220711 15:19:59.517"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Todo List</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" starttime="20220711 15:19:59.517" endtime="20220711 15:19:59.517"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220711 15:19:59.517" endtime="20220711 15:19:59.517"/>
+</kw>
+<status status="FAIL" starttime="20220711 15:19:57.911" endtime="20220711 15:19:59.518"/>
+</kw>
+<kw name="Click in Input Text">
+<status status="NOT RUN" starttime="20220711 15:19:59.518" endtime="20220711 15:19:59.518"/>
+</kw>
+<kw name="Click in Add Button">
+<status status="NOT RUN" starttime="20220711 15:19:59.518" endtime="20220711 15:19:59.518"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20220711 15:19:59.518" endtime="20220711 15:19:59.518"/>
+</kw>
+<status status="FAIL" starttime="20220711 15:19:57.910" endtime="20220711 15:19:59.519">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=103.0.5060.114)
+Stacktrace:
+0   chromedriver                        0x000000010eeb9079 chromedriver + 4444281
+1   chromedriver                        0x000000010ee45403 chromedriver + 3970051
+2   chromedriver                        0x000000010eae0038 chromedriver + 409656
+3   chromedriver                        0x000000010ead9cc5 chromedriver + 384197
+4   chromedriver                        0x000000010eacc85d chromedriver + 329821
+5   chromedriver                        0x000000010eacd60d chromedriver + 333325
+6   chromedriver                        0x000000010eaccac7 chromedriver + 330439
+7   chromedriver                        0x000000010eacc047 chromedriver + 327751
+8   chromedriver                        0x000000010eacaf16 chromedriver + 3...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x000000010eb0aa95 chromedriver + 584341
+17  chromedriver                        0x000000010ee8a55d chromedriver + 4253021
+18  chromedriver                        0x000000010ee8f3a1 chromedriver + 4273057
+19  chromedriver                        0x000000010ee9416f chromedriver + 4292975
+20  chromedriver                        0x000000010ee8fdea chromedriver + 4275690
+21  chromedriver                        0x000000010ee6954f chromedriver + 4117839
+22  chromedriver                        0x000000010eea9ed8 chromedriver + 4382424
+23  chromedriver                        0x000000010eeaa05f chromedriver + 4382815
+24  chromedriver                        0x000000010eec08d5 chromedriver + 4475093
+25  libsystem_pthread.dylib             0x00007ff80d8654e1 _pthread_start + 125
+26  libsystem_pthread.dylib             0x00007ff80d860f6b thread_start + 15</status>
+</test>
+<status status="FAIL" starttime="20220711 15:19:57.786" endtime="20220711 15:19:59.519"/>
+</suite>
+<status status="FAIL" starttime="20220711 15:19:57.785" endtime="20220711 15:19:59.520"/>
+</suite>
+<status status="FAIL" starttime="20220711 15:19:57.783" endtime="20220711 15:19:59.521"/>
+</suite>
+<status status="FAIL" starttime="20220711 15:19:57.767" endtime="20220711 15:19:59.522"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Todo-List">Todo-List</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">Todo-List.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Chrome">Todo-List.Tests.Chrome</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Adding Task">Todo-List.Tests.Chrome.Adding Task</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
