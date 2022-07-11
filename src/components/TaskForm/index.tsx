@@ -30,12 +30,13 @@ export function TaskForm({ addTask }: TaskFormProps) {
     <div className={styles.form__container}>
       <form className={styles.form__content}>
         <input
+          id="task-input"
           value={inputValue}
           type="text"
           placeholder="Adicione uma nova tarefa"
           onChange={handleFormTextChange}
         />
-        <button type="submit" onClick={handleFormSubmit}>
+        <button type="submit" onClick={handleFormSubmit} id="add-task">
           Criar
           <PlusCircle className={styles.icon} />
         </button>
